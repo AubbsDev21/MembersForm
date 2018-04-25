@@ -18,7 +18,14 @@ app.get("/user/:id", (req, res) => {
     database: 'memberForm'
   })
    //fetching the values in the table then putting them in json format
-  connction.query("SELECT * FROM users", (err, rows, fields) => {
+   const sqlString = "SELECT * FROM users WHERE id = ?"
+   const userid = req.params.id
+  connction.query(sqlString,[userid] , (err, rows, fields) => {
+    if (err) {
+      console.log( err)
+      res.sendStatus(500)
+      return
+    }
     console.log("vlaues are being qurey")
     res.json(rows)
   })
