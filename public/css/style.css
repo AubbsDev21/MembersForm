@@ -1,0 +1,39 @@
+  
+
+
+
+.fill {
+	background-image: initial;
+	background: url(../img/people.jpg) no-repeat;
+	background-size: cover;
+	height: 950px;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.fill h2 {
+	text-align: center;
+	color: #56BEDC;
+	font-size: 80px;
+}
+
+.BigText {
+	text-align: center;
+	color: #ffffff;
+	font-size: 150px;
+    padding-top: 250px;
+}
+
+.Title_form {
+	text-align: center;
+	color: #56BEDC;
+	font-size: 70px;
+	padding-top: 80px;
+}
+
+.form_setup {
+	padding-top: 80px;
+	padding-bottom: 50px;
+}
+
+
