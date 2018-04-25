@@ -5,6 +5,7 @@ const app = express()
 const morgan = require('morgan')
 const mysql = require('mysql')
 
+app.use(express.static('./public'))
 
 app.use(morgan('short'))
 
