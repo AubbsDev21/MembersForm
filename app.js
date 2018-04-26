@@ -11,12 +11,21 @@ app.use(express.static('./public'))
 
 app.use(morgan('short'))
 
+
+
 app.post('/create_user', (req, res) => {
   console.log("Creating new user")
   res.end()
 })
+
+
+
 app.get("/user/:id", (req, res) => {
   console.log("Featching the user by id " + req.params.id)
+
+
+
+
 
   // Connecting to the my sql database  
   const connction = mysql.createConnection({
@@ -24,6 +33,11 @@ app.get("/user/:id", (req, res) => {
     user: 'root',
     database: 'memberForm'
   })
+
+
+
+
+
    //fetching the values in the table then putting them in json format
    const sqlString = "SELECT * FROM users WHERE id = ?"
    const userid = req.params.id
@@ -37,11 +51,19 @@ app.get("/user/:id", (req, res) => {
     res.json(rows)
   })
 })
+
+
+
+
 //   "/" mean root dir
 app.get("/", (req, res) => {
   console.log("Responding to root route")
   res.send("Hello")
 })
+
+
+
+
 
 app.get("/users", (req, res) => {
   const user1 = {FristName: "Aubre", Lastname: "Body"}
@@ -49,6 +71,10 @@ app.get("/users", (req, res) => {
   res.json([user1, user2])
   //res.send("Using nodemon")
 })
+
+
+
+
 
 app.listen(3000, () => {
   console.log("Server is up and running on port 3000..... ")
