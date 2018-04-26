@@ -8,34 +8,55 @@ const bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.static('./public'))
-
 app.use(morgan('short'))
 
 
-
+//posting data onto sql database
 app.post('/create_user', (req, res) => {
   console.log("Creating new user")
-  res.end()
+  console.log("Frist Name" + req.body.create_Frist_name)
+  const fristname = req.body.create_Frist_name
+  const lastname = req.body.create_last_name
+  const Address = req.body.create_address_1
+  const Address2 = req.body.create_address_2
+  const City = req.body.create_city
+  const Zipcode = req.body.create_zip
+  const connction = Sqlconnection()
+  const queryString = "INSERT INTO users (Fristname1, LastName, address, address2, city, zip) VALUES (?, ?, ?, ?, ?, ?)"
+  //the action of inserting data 
+  connction.query(queryString, [fristname,lastname,Address,Address2,City,Zipcode],(err, results, fields) => {
+    if (err) {
+      console.log("Failed to insert new user: " + err)
+      res.sendStatus(500)
+      return
+    }
+     
+    res.redirect('../Thanks.html');
+    console.log("success Inserted new user with id of: " + results.insertedId);
+  })
+
+
+  
+  
 })
 
+//conntion pool 
+const pool = mysql.createPool({
+  connectionLimit : 10, 
+   host: 'localhost',
+    user: 'root',
+    database: 'Members_Form'
+})
 
+function Sqlconnection() {
+  return pool
+}
 
 app.get("/user/:id", (req, res) => {
   console.log("Featching the user by id " + req.params.id)
 
-
-
-
-
   // Connecting to the my sql database  
-  const connction = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'memberForm'
-  })
-
-
-
+  const connction = Sqlconnection()
 
 
    //fetching the values in the table then putting them in json format

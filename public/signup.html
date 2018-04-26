@@ -26,42 +26,42 @@
 		</div>
 	</div>
 
-	<div class="container" action="/create_user" method="POST">
+	<div class="container" >
 		 <h1 class="Title_form">Signup Form</h1>
-		<form class="form_setup">
+		<form class="form_setup" action="/create_user" method="POST">
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="inputEmail4">Frist Name</label>
-			      <input type="text" class="form-control" id="inputFristname" placeholder="Frist Name">
+			      <input type="text" class="form-control" id="inputFristname" placeholder="Frist Name" name="create_Frist_name">
 			    </div>
 			    <div class="form-group col-md-6">
 			      <label for="inputPassword4">Last Name</label>
-			      <input type="text" class="form-control" id="inputLastname" placeholder="Last Name">
+			      <input type="text" class="form-control" id="inputLastname" placeholder="Last Name" name="create_last_name">
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="inputAddress">Address</label>
-			    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+			    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="create_address_1">
 			  </div>
 			  <div class="form-group">
 			    <label for="inputAddress2">Address 2</label>
-			    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+			    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="create_address_2">
 			  </div>
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="inputCity">City</label>
-			      <input type="text" class="form-control" id="inputCity">
+			      <input type="text" class="form-control" id="inputCity" name="create_city">
 			    </div>
 			    <div class="form-group col-md-4">
 			      <label for="inputState">State</label>
-			      <select id="inputState" class="form-control">
+			      <select id="inputState" class="form-control" name="create_state">
 			        <option selected>Choose...</option>
 			        <option>North Carolina</option>
 			      </select>
 			    </div>
 			    <div class="form-group col-md-2">
 			      <label for="inputZip">Zip</label>
-			      <input type="text" class="form-control" id="inputZip">
+			      <input type="text" class="form-control" id="inputZip" name="create_zip">
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -72,7 +72,7 @@
 			      </label>
 			    </div>
 			  </div>
-			  <button type="submit" class="btn btn-primary" id="butt">Sign in</button>
+			  <button type="submit" class="btn btn-primary" id="butt">SUBMIT</button>
 </form>
 	</div>
 </body>
