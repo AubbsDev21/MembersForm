@@ -5,8 +5,7 @@ An example informaton form used with node.js and mysql
 
 ## Examples
 * Database
-![database](https://user-images.githubusercontent.com/16025198/39382357-2f47bbfc-4a33-11e8-90fc-2c7298c6e195.gif)
-
+![database_2](https://user-images.githubusercontent.com/16025198/39382449-84090a6a-4a33-11e8-9858-3b945bea7fe9.gif)
 
 
 ## Nodejs Dependencies
